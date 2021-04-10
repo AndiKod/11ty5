@@ -1,0 +1,26 @@
+---
+title: Channel
+layout: page
+permalink: "channel/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+pagination:
+  data: collections.item
+  size: 10
+  alias: items
+  reverse: true 
+eleventyNavigation:
+  key: Channel
+  order: 2 
+---
+
+  {# Starter point for any content-type collection display and browse. #}
+  {# Need a blog? Replace "Channel" by Blog and "Items" by posts... #}
+  {# or stuff like "Portfolio & Projects", then customise as needed. #}
+
+  {% if title %}<h2>{{title}}</h2>{% endif %}
+  <p class="mb-6 italic">A stream of symilar content items: posts, projects, books, whatever.</p>
+
+  {% include "partials/items-loop.njk" %}
+  {% include "partials/pagination.njk" %}
+
+  <h3 class="mb-2">Tags</h3>
+  {% include "partials/tags.njk" %}

@@ -1,0 +1,24 @@
+{
+  "name": "11ty5",
+  "description": "5tarter base for 11ty projects.",
+  "url": "https://11ty5.netlify.app",
+  "baseUrl": "/",
+  "author": {
+    "handle": "@AndiKod",
+    "name": "Andrei Curelaru"
+  },
+  "images": {
+    "twitter": "twitter5.jpg",
+    "og": "og5.jpg"
+  },
+  "feed": {
+    "filename": "feed.xml",
+    "path": "/rss/feed.xml",
+    "id": "https://example.com/"
+  },
+  "jsonfeed": {
+    "filename": "feed.json",
+    "path": "/rss/feed.json",
+    "url": "https://example.com/feed/feed.json"
+  }
+}

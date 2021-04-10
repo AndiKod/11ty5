@@ -1,0 +1,15 @@
+<header>
+  <nav class="container mx-auto max-w-3xl px-8 pt-2 flex flex-wrap justify-between">
+    <div>
+      <h2><a href="{{ "/" | url }}">{{ site.name }}</a></h2>
+    </div>
+    {% set navPages = collections.all | eleventyNavigation %}
+    <ul class="flex flex-wrap sm:w-64 w-full mt-6 md:justify-between justify-evenly">
+      {%- for entry in navPages %}
+      <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+        <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </nav>
+</header>

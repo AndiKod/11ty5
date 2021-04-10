@@ -1,0 +1,25 @@
+---
+layout: page
+permalink: /tag/{{ tag }}/
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  addAllPagesToCollections: false
+  filter:
+    - all
+    - items
+    - draft
+eleventyComputed:
+  title: "{{ tag }}"
+---
+
+{% if title %}<h2>{{title}}</h2>{% endif %}
+<p class="text-md italic mb-6">Here are some <strong>{{tag}}</strong> relates items.</p>
+
+{% set items = collections[tag] | reverse %}
+{% include "partials/items-loop.njk" %}
+
+<h3 class="mb-2">Tags</h3>
+{% include "partials/tags.njk" %}
+
