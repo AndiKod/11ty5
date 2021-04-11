@@ -1,15 +1,13 @@
-<header>
-  <nav class="container mx-auto max-w-3xl px-8 pt-2 flex flex-wrap justify-between">
-    <div>
-      <h2><a href="{{ "/" | url }}">{{ site.name }}</a></h2>
-    </div>
-    {% set navPages = collections.all | eleventyNavigation %}
-    <ul class="flex flex-wrap sm:w-64 w-full mt-6 md:justify-between justify-evenly">
-      {%- for entry in navPages %}
-      <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-        <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-      </li>
-      {%- endfor %}
-    </ul>
-  </nav>
+<header class="flex items-center fixed w-full bg-opacity-90 shadow-md">
+  <h1 class="home text-xl font-bold">
+    <a href="{{ '/' | url }}">{{ site.name }}</a>
+  </h1>
+
+  {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+  <ul class="nav">
+  {%- for entry in collections.all | eleventyNavigation %}
+    <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
+  {%- endfor %}
+    <li class="float-right"><button id="switch" onclick="toggleTheme()">Switch</button></li>
+  </ul>
 </header>

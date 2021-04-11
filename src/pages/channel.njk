@@ -9,7 +9,7 @@ pagination:
   reverse: true 
 eleventyNavigation:
   key: Channel
-  order: 2 
+  order: 1 
 ---
 
   {# Starter point for any content-type collection display and browse. #}
@@ -19,7 +19,7 @@ eleventyNavigation:
   {% if title %}<h2>{{title}}</h2>{% endif %}
   <p class="mb-6 italic">A stream of symilar content items: posts, projects, books, whatever.</p>
 
-  {% include "partials/items-loop.njk" %}
+  {% include "partials/items-loop.njk" %} 
   {% include "partials/pagination.njk" %}
 
   <h3 class="mb-2">Tags</h3>

@@ -6,4 +6,21 @@ tags:
   - eleventy
 ---
 
-IL était une fois comme jamais ...
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+
+> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
+# H1 Title here
+
+## H2 Title here
+
+### H3 Title here
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+- One thing
+- Another
+- - A nested one
+- And the last
+
+Is this `inline code` styled?

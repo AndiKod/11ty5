@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-light">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,44 +37,25 @@
     {# Meta Head block #}
     {% block head %}{% endblock %}
   </head>
-  <body class="flex flex-col min-h-screen">
+  <body>
+  <header>
+    <h1 class="home"><a href="{{ '/' | url }}">{{ site.name }}</a></h1>
+    <ul class="nav">
+    {%- for entry in collections.all | eleventyNavigation %}
+      <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
+    {%- endfor %}
+    </ul>
+  </header>
 
-    {% include 'partials/header.njk' %}
-
-      <main class="container mx-auto max-w-3xl p-8 flex-grow">
+  <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
         {{ content | safe }}
-      </main>
+  </main>
 
-    {% include 'partials/footer.njk' %}
+  {% include 'partials/footer.njk' %}
 
     {# {% include 'privacy-notice.njk' %} #}
     <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
     <script src="{{ site.baseUrl }}assets/main.bundle.js"></script>
 
-<script>
-      // function to set a given theme/color-scheme
-      function setTheme(themeName) {
-          localStorage.setItem('theme', themeName);
-          document.documentElement.className = themeName;
-      }
-
-      // function to toggle between light and dark theme
-      function toggleTheme() {
-          if (localStorage.getItem('theme') === 'theme-dark') {
-              setTheme('theme-light');
-          } else {
-              setTheme('theme-dark');
-          }
-      }
-
-      // Immediately invoked function to set the theme on initial load
-      (function () {
-          if (localStorage.getItem('theme') === 'theme-dark') {
-              setTheme('theme-dark');
-          } else {
-              setTheme('theme-light');
-          }
-      })();
-  </script>
   </body>
 </html>

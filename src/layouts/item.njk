@@ -3,7 +3,8 @@ layout: base
 permalink: "{% if path %}{{ path | slug }}{% else %}{{'/post/'}}{{ title | slug }}{% endif %}/index.html"
 ---
 
-<h1 class="text-blue-300">{{ title }}</h1>    
+<article class="pt-24">
+<h1>{{ title }}</h1>    
 
 <div class=" post mb-6">
     {{ content | safe }}
@@ -26,6 +27,7 @@ permalink: "{% if path %}{{ path | slug }}{% else %}{{'/post/'}}{{ title | slug 
     {{ date | dateDisplay }}
 {% endif %}
 
+</article>
 
 <div class="flex mt-8">
   <div class="flex-1">

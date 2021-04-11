@@ -1,0 +1,45 @@
+.theme-light {
+  --color-primary: #0060df;
+  --color-secondary: #fbfbfe;
+  --color-accent: #fd6f53;
+  --color-bg: #f0eef1;
+  --color-txt: #383838;
+}
+
+.theme-dark {
+  --color-primary: #17ed90;
+  --color-secondary: #243133;
+  --color-accent: #12cdea;
+  --color-bg: #333333;
+  --color-txt: #f0eef1;
+}
+
+h1 {
+  @apply text-5xl;
+  @apply font-extrabold;
+  @apply mt-6;
+  @apply mb-12;
+  color: var(--color-txt);
+}
+
+h2 {
+  @apply text-4xl;
+  @apply font-bold;
+  @apply mt-4;
+  @apply mb-8;
+  color: var(--color-txt);
+}
+
+h3 {
+  @apply text-3xl;
+  @apply font-semibold;
+  @apply mt-4;
+  @apply mb-6;
+  color: var(--color-txt);
+}
+
+p {
+  @apply text-lg;
+  @apply leading-relaxed;
+  @apply tracking-wide;
+}

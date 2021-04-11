@@ -1,162 +1,300 @@
-/* Fonts from https://fonts.google.com */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Overpass-Mono:ital,wght@0,400;0,700;1,400&display=swap');
+/* Font (see https://fonts.google.com) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 
+/* Prism Code Highlighting Theme (see https://prismjs.com) */
+@import url('https://cdn.jsdelivr.net/npm/prism-themes@1.5.0/themes/prism-dracula.css');
+
+/* Colors */
 :root {
-  --bg-color: #333333ff;
-  --txt-color: #b7c8c4ff;
+  --lightgray: #e0e0e0;
+  --gray: #c0c0c0;
+  --darkgray: #333;
+  --navy: #17050f;
+  --blue: #082840;
+  --white: #fff;
+}
 
-  --readable-text: 'Lato, sans-serif;';
-  --heading-text: 'Lora, sans-serif;';
-  --code-text: 'Overpass-Mono, sans-serif;';
+.theme-light {
+  --color-primary: #0060df;
+  --color-secondary: #fbfbfe;
+  --color-accent: #fd6f53;
+  --color-bg: #f0eef1;
+  --color-txt: #333333;
+}
+
+.theme-dark {
+  --color-primary: #17ed90;
+  --color-secondary: #243133;
+  --color-accent: #12cdea;
+  --color-bg: #333333 !important;
+  --color-txt: #f0eef1 !important;
+}
+
+/* Global stylesheet */
+* {
+  box-sizing: border-box;
 }
 
 html,
 body {
-  background-color: var(--bg-color);
-  color: var(--txt-color);
-  font-family: Lato, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, system-ui, sans-serif;
+  color: var(--color-txt);
+  background-color: var(--color-bg);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-bold leading-tight mt-3;
-}
+/* ************ TYPOGRAPHY ********************** */
 
 h1 {
-  @apply text-5xl;
+  @apply text-4xl;
+  @apply font-bold;
+  @apply leading-tight;
 }
-
 h2 {
   @apply text-3xl;
-  color: #87decdff;
+  @apply font-bold;
+  @apply leading-tight;
 }
-
 h3 {
   @apply text-2xl;
+  @apply font-bold;
+  @apply leading-tight;
 }
-
 h4 {
   @apply text-xl;
-}
-
-a {
   @apply font-bold;
+  @apply leading-tight;
+}
+h5 {
+  @apply text-lg;
+  @apply font-bold;
+  @apply leading-tight;
+}
+h6 {
+  @apply text-sm;
+  @apply font-bold;
+  @apply leading-tight;
 }
 
-a:hover {
-  @apply underline;
+p:last-child {
+  margin-bottom: 0;
+}
+p,
+.tmpl-post li,
+img {
+  max-width: 37.5em; /* 600px /16 */
+}
+p,
+.tmpl-post li {
+  line-height: 1.45;
+}
+a[href] {
+  color: var(--color-txt);
+}
+a[href]:visited {
+  color: var(--color-txt);
+}
+main {
+  padding: 1rem;
+}
+main :first-child {
+  margin-top: 0;
 }
 
-p {
-  @apply text-base;
+header {
+  color: var(--color-txt);
+  background-color: var(--color-bg);
+  @apply opacity-90;
 }
 
+header:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+table {
+  margin: 1em 0;
+}
+table td,
+table th {
+  padding-right: 1em;
+}
+
+pre,
+code {
+  font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
+    'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
+    'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
+    'Courier New', Courier, monospace;
+  line-height: 1.5;
+}
 pre {
-  @apply my-2 text-sm tracking-wider break-words;
-  border-radius: 25px;
+  font-size: 14px;
+  line-height: 1.375;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  padding: 1em;
+  margin: 0.5em 0;
+  background-color: #f6f6f6;
 }
-
-hr {
-  @apply mt-4 mb-2 border-dotted border-b border-gray-600;
+code {
+  word-break: break-all;
 }
-
-.attribution {
-  @apply text-right -mt-8 text-sm;
-}
-
-.attribution::before {
-  content: '— ';
-}
-
-.content > blockquote {
-  border-left: 0.5rem solid #718096;
-  margin: 1.5em 1.5em;
-  padding: 0.5em 1em;
-}
-
-.content > img {
+.highlight-line {
   display: block;
-  margin: 0 auto;
-  margin-top: 1rem;
-  max-width: 100%;
-  min-width: 100px;
+  padding: 0.125em 1em;
+  text-decoration: none; /* override del, ins, mark defaults */
+  color: inherit; /* override del, ins, mark defaults */
 }
 
-.content > ul {
-  list-style-type: disc;
+/* allow highlighting empty lines */
+.highlight-line:empty:before {
+  content: ' ';
+}
+/* avoid double line breaks when using display: block; */
+.highlight-line + br {
+  display: none;
 }
 
-.content > ol {
-  list-style-type: decimal;
+.highlight-line-isdir {
+  color: #b0b0b0;
+  background-color: #222;
+}
+.highlight-line-active {
+  background-color: #444;
+  background-color: hsla(0, 0%, 27%, 0.8);
+}
+.highlight-line-add {
+  background-color: #45844b;
+}
+.highlight-line-remove {
+  background-color: #902f2f;
 }
 
-.content > ol > li,
-.content > ul > li {
-  @apply text-lg mr-12 ml-12 pr-2 pl-2;
+/* Header */
+.home {
+  padding: 0 1rem;
+  float: left;
+  margin: 1rem 0; /* 16px /16 */
+  font-size: 1em; /* 16px /16 */
+}
+.home :link:not(:hover) {
+  text-decoration: none;
 }
 
-.content > p {
-  @apply pt-3;
+/* Nav */
+.nav {
+  padding: 0;
+  list-style: none;
+  float: left;
+  margin-left: 1em;
 }
-
-.excerpt {
-  @apply mb-2;
+.nav-item {
+  display: inline-block;
+  margin-right: 1em;
 }
-
-/*** --------------- PAGINATION ------------------ ***/
-
-.next-page,
-.previous-page,
-.first-page,
-.last-page {
-  @apply font-bold whitespace-nowrap text-center;
+.nav-item a[href]:not(:hover) {
+  text-decoration: none;
 }
-
-.next-page::after {
-  content: ' ►';
-}
-
-.previous-page::before {
-  content: '◄ ';
-}
-
-.first-page::before {
-  content: '| ';
-}
-
-.last-page::after {
-  content: ' |';
-}
-
-/*** --------------- TAGS ------------------ ***/
-
-.tag {
-  @apply inline-block px-4 py-1 mr-2 mb-2 text-xs font-bold rounded-md lowercase bg-gray-700 text-white;
-  border: 1px solid transparent;
-}
-
-.tag:hover {
-  animation: tag-hover 500ms both;
-}
-
-@keyframes tag-hover {
-  100% {
-    border: 1px solid #fff;
-    background-color: transparent;
-    color: #fff;
-  }
-}
-
-.tag:before {
-  content: '#';
-}
-
-.my-active-class {
+.nav-item-active {
+  font-weight: 700;
   text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+  list-style: none;
+  padding: 0;
+}
+.postlist-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  counter-increment: start-from -1;
+  line-height: 1.8;
+}
+.postlist-item:before {
+  display: inline-block;
+  pointer-events: none;
+  content: '' counter(start-from, decimal-leading-zero) '. ';
+  line-height: 100%;
+  text-align: right;
+}
+.postlist-date,
+.postlist-item:before {
+  font-size: 0.8125em; /* 13px /16 */
+  color: var(--darkgray);
+}
+.postlist-date {
+  word-spacing: -0.5px;
+}
+.postlist-link {
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  text-underline-position: from-font;
+  text-underline-offset: 0;
+  text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+  font-weight: bold;
+}
+.tmpl-home .postlist-link {
+  font-size: 1.1875em; /* 19px /16 */
+  font-weight: 700;
+}
+
+/* Tags */
+.post-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 0.6875em; /* 11px /16 */
+  padding: 0.09090909090909em 0.3636363636364em; /* 1px 4px /11 */
+  margin-left: 0.8em; /* 8px /10 */
+  color: var(--darkgray);
+  border: 1px solid var(--gray);
+  border-radius: 0.25em; /* 3px /12 */
+  text-decoration: none;
+  line-height: 1.8;
+}
+a[href].post-tag,
+a[href].post-tag:visited {
+  color: inherit;
+}
+a[href].post-tag:hover,
+a[href].post-tag:focus {
+  background-color: var(--lightgray);
+}
+.postlist-item > .post-tag {
+  align-self: center;
+}
+
+/* Direct Links / Markdown Headers */
+.direct-link {
+  font-family: sans-serif;
+  text-decoration: none;
+  font-style: normal;
+  margin-left: 0.1em;
+}
+a[href].direct-link,
+a[href].direct-link:visited {
+  color: transparent;
+}
+a[href].direct-link:focus,
+a[href].direct-link:focus:visited,
+:hover > a[href].direct-link,
+:hover > a[href].direct-link:visited {
+  color: #aaa;
 }
