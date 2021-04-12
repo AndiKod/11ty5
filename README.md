@@ -29,10 +29,11 @@ _Feel free to opt-out those not needed, or ignore them._
 
 ## Default Layouts & Partials
 
+- -- Layouts --
 - Base
 - Page
 - Item (aka, single-post, project, etc)
-
+- -- Partials --
 - header (auto nav menu via eleventy-navigation)
 - items-loop
 - pagination
