@@ -4,15 +4,15 @@
 /* Prism Code Highlighting Theme (see https://prismjs.com) */
 @import url('https://cdn.jsdelivr.net/npm/prism-themes@1.5.0/themes/prism-dracula.css');
 
-/* Colors */
+/* Colors if no light/dark modes enabled
 :root {
-  --lightgray: #e0e0e0;
-  --gray: #c0c0c0;
-  --darkgray: #333;
-  --navy: #17050f;
-  --blue: #082840;
-  --white: #fff;
+  --color-primary: #0060df;
+  --color-secondary: #fbfbfe;
+  --color-accent: #fd6f53;
+  --color-bg: #f0eef1;
+  --color-txt: #333333;
 }
+*/
 
 .theme-light {
   --color-primary: #0060df;
@@ -25,9 +25,9 @@
 .theme-dark {
   --color-primary: #17ed90;
   --color-secondary: #243133;
-  --color-accent: #12cdea;
-  --color-bg: #333333 !important;
-  --color-txt: #f0eef1 !important;
+  --color-accent: #71979c;
+  --color-bg: #333333;
+  --color-txt: #f0eef1;
 }
 
 /* Global stylesheet */
@@ -61,21 +61,6 @@ h3 {
   @apply font-bold;
   @apply leading-tight;
 }
-h4 {
-  @apply text-xl;
-  @apply font-bold;
-  @apply leading-tight;
-}
-h5 {
-  @apply text-lg;
-  @apply font-bold;
-  @apply leading-tight;
-}
-h6 {
-  @apply text-sm;
-  @apply font-bold;
-  @apply leading-tight;
-}
 
 p:last-child {
   margin-bottom: 0;
@@ -89,12 +74,14 @@ p,
 .tmpl-post li {
   line-height: 1.45;
 }
+/*
 a[href] {
   color: var(--color-txt);
 }
 a[href]:visited {
   color: var(--color-txt);
 }
+*/
 main {
   padding: 1rem;
 }
@@ -254,47 +241,16 @@ code {
   font-weight: 700;
 }
 
-/* Tags */
-.post-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  font-size: 0.6875em; /* 11px /16 */
-  padding: 0.09090909090909em 0.3636363636364em; /* 1px 4px /11 */
-  margin-left: 0.8em; /* 8px /10 */
-  color: var(--darkgray);
-  border: 1px solid var(--gray);
-  border-radius: 0.25em; /* 3px /12 */
-  text-decoration: none;
-  line-height: 1.8;
-}
-a[href].post-tag,
-a[href].post-tag:visited {
-  color: inherit;
-}
-a[href].post-tag:hover,
-a[href].post-tag:focus {
-  background-color: var(--lightgray);
-}
-.postlist-item > .post-tag {
-  align-self: center;
-}
+/* ------------------- ITEM SECTION ---------------------------- */
 
-/* Direct Links / Markdown Headers */
-.direct-link {
-  font-family: sans-serif;
-  text-decoration: none;
-  font-style: normal;
-  margin-left: 0.1em;
+.item {
+  @apply mb-2;
 }
-a[href].direct-link,
-a[href].direct-link:visited {
-  color: transparent;
+.excerpt {
+  @apply mb-4;
 }
-a[href].direct-link:focus,
-a[href].direct-link:focus:visited,
-:hover > a[href].direct-link,
-:hover > a[href].direct-link:visited {
-  color: #aaa;
+/* Tags */
+.tag {
+  @apply pr-2;
+  color: var(--color-accent);
 }

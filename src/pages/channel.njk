@@ -4,7 +4,7 @@ layout: page
 permalink: "channel/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
 pagination:
   data: collections.item
-  size: 10
+  size: 2
   alias: items
   reverse: true 
 eleventyNavigation:
@@ -22,5 +22,5 @@ eleventyNavigation:
   {% include "partials/items-loop.njk" %} 
   {% include "partials/pagination.njk" %}
 
-  <h3 class="mb-2">Tags</h3>
+  <h3 class="mb-2">allTags</h3>
   {% include "partials/tags.njk" %}

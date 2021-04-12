@@ -11,7 +11,7 @@ permalink: "{% if path %}{{ path | slug }}{% else %}{{'/post/'}}{{ title | slug 
 </div>
 
 {%- if dog %}
-    <img src="{{dog}}" alt="bon toutou" />
+    <img src="{{dog}}" alt="bon toutou" class="w-40 h-40 overflow-hidden rounded-full"/>
 {%- endif %}
 
 {% if tags %}

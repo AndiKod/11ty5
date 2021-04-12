@@ -98,9 +98,7 @@ module.exports = (eleventyConfig) => {
     return `<span class="text-${color}-300">io, ${content}!</span>`;
   });
 
-  // --- Filters
-
-  //------------------------------------
+  // ----------------- END Shortcodes ----------------------- //
 
   eleventyConfig.setBrowserSyncConfig({
     files: ['dist/**/*'],
@@ -110,7 +108,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addCollection('postsWithoutDrafts', (collection) =>
-    [...collection.getFilteredByGlob('src/posts/*.md')].filter(
+    [...collection.getFilteredByGlob('src/items/posts/*.md')].filter(
       (post) => !post.data.draft
     )
   );
