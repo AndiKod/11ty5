@@ -5,8 +5,8 @@ module.exports = async () => {
   const image = result.data.message;
 
   return {
-    layout: 'item.njk',
     tags: 'post',
+    layout: 'post.njk',
     dog: image,
   };
 };

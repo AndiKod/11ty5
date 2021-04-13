@@ -25,17 +25,15 @@
     <meta name="og:site_name" content="{{ site.name }}">
     <meta name="og:locale" content="en_GB">
     <meta name="og:type" content="website">
-
-    <link rel="icon" type="image/x-icon" href="{{ site.baseUrl }}favicon.ico" />
-    <meta http-equiv="Content-Security-Policy: script-src 'self'  http://139.59.187.41">
-
+  
     <title>{% if metaTitle %}{{ metaTitle }}{% else %}{{ title }}{% endif %}{% if metaTitle or title %} | {% endif %}{{ site.name }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <link rel="icon" type="image/x-icon" href="{{ site.baseUrl }}favicon.ico" />
+    <link rel="canonical" href="{{ current_url }}" />
 
     <link rel="stylesheet" href="{{ site.baseUrl }}assets/main.bundle.css">
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
 
-    {# Meta Head block #}
-    {% block head %}{% endblock %}
   </head>
   <body class="flex flex-col min-h-screen">
 
@@ -47,34 +45,31 @@
 
     {% include 'partials/footer.njk' %}
 
-    {# {% include 'privacy-notice.njk' %} #}
-    <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
     <script src="{{ site.baseUrl }}assets/main.bundle.js"></script>
+    <script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+            document.documentElement.className = themeName;
+        }
 
-<script>
-      // function to set a given theme/color-scheme
-      function setTheme(themeName) {
-          localStorage.setItem('theme', themeName);
-          document.documentElement.className = themeName;
-      }
+        // function to toggle between light and dark theme
+        function toggleTheme() {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-light');
+            } else {
+                setTheme('theme-dark');
+            }
+        }
 
-      // function to toggle between light and dark theme
-      function toggleTheme() {
-          if (localStorage.getItem('theme') === 'theme-dark') {
-              setTheme('theme-light');
-          } else {
-              setTheme('theme-dark');
-          }
-      }
-
-      // Immediately invoked function to set the theme on initial load
-      (function () {
-          if (localStorage.getItem('theme') === 'theme-dark') {
-              setTheme('theme-dark');
-          } else {
-              setTheme('theme-light');
-          }
-      })();
-  </script>
+        // Immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            } else {
+                setTheme('theme-light');
+            }
+        })();
+    </script>
   </body>
 </html>

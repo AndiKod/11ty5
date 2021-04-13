@@ -2,6 +2,7 @@
 @import 'tailwindcss/base';
 @import './base.css';
 @import './prose5.css';
+@import './monokai-dark.css';
 
 /* purgecss end ignore */
 @import 'tailwindcss/components';

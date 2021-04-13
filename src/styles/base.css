@@ -1,33 +1,30 @@
 /* Font (see https://fonts.google.com) */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* Prism Code Highlighting Theme (see https://prismjs.com) */
-@import url('https://cdn.jsdelivr.net/npm/prism-themes@1.5.0/themes/prism-dracula.css');
-
-/* Colors if no light/dark modes enabled
-:root {
-  --color-primary: #0060df;
-  --color-secondary: #fbfbfe;
-  --color-accent: #fd6f53;
-  --color-bg: #f0eef1;
-  --color-txt: #333333;
-}
-*/
-
 .theme-light {
-  --color-primary: #0060df;
-  --color-secondary: #fbfbfe;
-  --color-accent: #fd6f53;
+  --color-primary: '';
+  --color-secondary: '';
+  --color-accent: #904232;
   --color-bg: #f0eef1;
   --color-txt: #333333;
 }
 
 .theme-dark {
-  --color-primary: #17ed90;
-  --color-secondary: #243133;
-  --color-accent: #71979c;
+  --color-primary: '';
+  --color-secondary: '';
+  --color-accent: #109aac;
   --color-bg: #333333;
   --color-txt: #f0eef1;
+}
+
+.color-primary {
+  color: var(--color-primary);
+}
+.color-secondary {
+  color: var(--color-secondary);
+}
+.color-accent {
+  color: var(--color-accent);
 }
 
 /* Global stylesheet */
@@ -74,14 +71,7 @@ p,
 .tmpl-post li {
   line-height: 1.45;
 }
-/*
-a[href] {
-  color: var(--color-txt);
-}
-a[href]:visited {
-  color: var(--color-txt);
-}
-*/
+
 main {
   padding: 1rem;
 }
@@ -197,48 +187,6 @@ code {
 .nav-item-active {
   font-weight: 700;
   text-decoration: underline;
-}
-
-/* Posts list */
-.postlist {
-  list-style: none;
-  padding: 0;
-}
-.postlist-item {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  counter-increment: start-from -1;
-  line-height: 1.8;
-}
-.postlist-item:before {
-  display: inline-block;
-  pointer-events: none;
-  content: '' counter(start-from, decimal-leading-zero) '. ';
-  line-height: 100%;
-  text-align: right;
-}
-.postlist-date,
-.postlist-item:before {
-  font-size: 0.8125em; /* 13px /16 */
-  color: var(--darkgray);
-}
-.postlist-date {
-  word-spacing: -0.5px;
-}
-.postlist-link {
-  padding-left: 0.25em;
-  padding-right: 0.25em;
-  text-underline-position: from-font;
-  text-underline-offset: 0;
-  text-decoration-thickness: 1px;
-}
-.postlist-item-active .postlist-link {
-  font-weight: bold;
-}
-.tmpl-home .postlist-link {
-  font-size: 1.1875em; /* 19px /16 */
-  font-weight: 700;
 }
 
 /* ------------------- ITEM SECTION ---------------------------- */

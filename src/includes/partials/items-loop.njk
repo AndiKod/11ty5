@@ -7,9 +7,9 @@
           <p class="excerpt">{{ item.data.excerpt }}</p>
 
         <footer>
-        <span>Tagged: </span>
+        <span class="font-semibold">Tagged: </span>
         {% for tag in item.data.tags %}
-          {%- if tag !== "item" -%}
+          {%- if tag !== "post" -%}
            <a class="tag" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
           {%- endif -%}
         {% endfor %}

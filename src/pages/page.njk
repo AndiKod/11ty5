@@ -5,26 +5,12 @@ permalink: "page/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber
 eleventyNavigation:
   key: Page
   order: 2
-pagination:
-  data: collections.item
-  size: 10
-  alias: items
-  reverse: true 
 ---
-
-<main>
 
 {% if title %}<h2>{{title}}</h2>{% endif %}
 
+<p>Oh, don't mind me, I'm just a page.</p>
+<p>Test out your styles on the <a href="{{'/sandbox/' | url}}" class="font-semibold">|sandbox</a> page....</p>
 
-<p>Off-speed petey pinch hitter astroturf walk off no decision count full count wrigley. Hack cheese helmet tossed gap run red sox. Fall classic in the hole ejection rotation rally center field shift. Manager pickoff knuckleball assist pinch runner pitchout stretch. Steal hardball extra innings alley rubber off-speed flyout third base. Baseline butcher boy umpire left field hitter, catcher win right field can of corn.</p>
-
-
-<h1>Hello, i'm a h1 Title</h1>
-<h2>Hello, i'm a h2 Title</h2>
-<h3>Hello, i'm a h3 Title</h3>
-
-
-<p>Test out your styles on the <a href="{{'/sandbox/' | url}}">sandbox</a> page.</p>
 
 

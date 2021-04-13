@@ -7,12 +7,13 @@ permalink: "{% if path %}{{ path | slug }}{% else %}{{'/post/'}}{{ title | slug 
 <h1>{{ title }}</h1>    
 
 <div class="post mb-6">
-    {{ content | safe }}
+  {{ content | safe }}
 </div>
 
 {%- if dog %}
-    <img src="{{dog}}" alt="bon toutou" class="w-40 h-40 overflow-hidden rounded-full"/>
+  <img src="{{dog}}" alt="bon toutou" class="w-40 h-40 overflow-hidden rounded-full"/>
 {%- endif %}
+<p>This is a random dogo picture, pulled from the dogAPI each time the `yarn build` or `yarn dev` are called.</p>
 
 {% if tags %}
     <div class="mb-2 mt-12">

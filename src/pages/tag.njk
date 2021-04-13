@@ -15,7 +15,7 @@ eleventyComputed:
 ---
 
 {% if title %}<h2>{{title}}</h2>{% endif %}
-<p class="text-md italic mb-6">Here are some <strong>{{tag}}</strong> relates items.</p>
+<p class="text-md italic mb-6">Here are some <span class="font-semibold">{{tag}}</span> related content.</p>
 
 {% set items = collections[tag] | reverse %}
 {% include "partials/items-loop.njk" %}

@@ -7,7 +7,7 @@ module.exports = {
       './src/**/*.md',
     ],
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/forms')],
   theme: {
     extend: {},
   },

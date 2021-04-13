@@ -6,6 +6,6 @@ tags:
   - eleventy
 ---
 
-Some of those: [https://www.11ty.dev/docs/starter/](https://www.11ty.dev/docs/starter/)
+Some of those: [|www.11ty.dev/docs/starter/](https://www.11ty.dev/docs/starter/)
 
-...
+...or give a try to 11ty5
