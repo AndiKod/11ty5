@@ -92,12 +92,6 @@ module.exports = (eleventyConfig) => {
     return `<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/${tweet}"></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`;
   });
 
-  eleventyConfig.addPairedShortcode('io', (content, options = {}) => {
-    const { color = 'green' } = options;
-
-    return `<span class="text-${color}-300">io, ${content}!</span>`;
-  });
-
   // ----------------- END Shortcodes ----------------------- //
 
   eleventyConfig.setBrowserSyncConfig({
