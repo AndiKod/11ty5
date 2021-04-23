@@ -11,6 +11,14 @@ yarn dev
 yarn build
 ```
 
+**Note:** Since updating to Node v16.0.0 non-harming yet annoying warnings where seen in the terminal. Some of them are gone, one is still here, as the node-dependency repository causing it ...is archived and inactive since aegis.
+
+`DeprecationWarning: Invalid 'main' field in '... \11ty5\node_modules\emitter-mixin\package.json'`
+
+Warning is to be ignored so far, and looking forward for an update from "emitter-mixin" or NPM.
+
+Until that ...happy coding.
+
 ## Dependencies & Utilities:
 
 - Eleventy - 0.12.1
