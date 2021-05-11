@@ -18,7 +18,6 @@ yarn build
 **Suggested temporary workaround:** Remove the *y* from `/node-modules/emitter-mixin-package.json` at `"main": "y"`.
 
 ... or just ignore the warning for the moment, everyting *"gwan be irie"*.
-_Until a more "out of the box" solution ...happy coding._
 
 ## Dependencies & Utilities:
 
