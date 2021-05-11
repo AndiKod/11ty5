@@ -11,12 +11,14 @@ yarn dev
 yarn build
 ```
 
-**Note:** Since updating to Node v16.0.0 non-harming yet annoying warnings were seen in the terminal.
+**Note:** Since updating to Node v16.0.0 non-harming yet annoying warnings were seen in the terminal when serving a local 11ty project:
 
-`DeprecationWarning: Invalid 'main' field in '... \11ty5\node_modules\emitter-mixin\package.json'`
+[github.com/11ty/eleventy/issues/1765](https://github.com/11ty/eleventy/issues/1765)
 
-Warning is to be ignored so far, and looking forward for a fix.
-_Until that ...happy coding._
+**Suggested temporary workaround:** Remove the *y* from `/node-modules/emitter-mixin-package.json` at `"main": "y"`.
+
+... or just ignore the warning for the moment, everyting *"gwan be irie"*.
+_Until a more "out of the box" solution ...happy coding._
 
 ## Dependencies & Utilities:
 
