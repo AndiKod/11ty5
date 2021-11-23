@@ -15,16 +15,13 @@ yarn build
 
 [github.com/11ty/eleventy/issues/1765](https://github.com/11ty/eleventy/issues/1765)
 
-**Suggested temporary workaround:** Remove the *y* from `/node-modules/emitter-mixin-package.json` at `"main": "y"`.
+**Suggested temporary workaround:** Remove the _y_ from `/node-modules/emitter-mixin-package.json` at `"main": "y"`.
 
-... or just ignore the warning for the moment, everyting *"gwan be irie"*.
+... or just ignore the warning for the moment, everyting _"gwan be irie"_.
 
 ## Dependencies & Utilities:
 
-- Eleventy - 0.12.1
-- Tailwind - 2.1.1
-- Rollup - 2.38.4
-- Axios - 0.21.1
+- Everything upgraded to latest on November 23th '20
 - Light/Dark [theme switch](https://medium.com/@haxzie/dark-and-light-theme-switcher-using-css-variables-and-pure-javascript-zocada-dd0059d72fa2)
 
 ## Eleventy plugins installed:
