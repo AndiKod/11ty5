@@ -7,21 +7,15 @@ _A work & exploration in progress, made/maintained for own use but if it can hel
 git clone git@github.com:AndiKod/11ty5.git my-project
 cd my-project
 yarn install
+yarn
 yarn dev
+
 yarn build
 ```
 
-**Note:** Since updating to Node v16.0.0 non-harming yet annoying warnings were seen in the terminal when serving a local 11ty project:
-
-[github.com/11ty/eleventy/issues/1765](https://github.com/11ty/eleventy/issues/1765)
-
-**Suggested temporary workaround:** Remove the _y_ from `/node-modules/emitter-mixin-package.json` at `"main": "y"`.
-
-... or just ignore the warning for the moment, everyting _"gwan be irie"_.
-
 ## Dependencies & Utilities:
 
-- Everything upgraded to latest on November 23th '20
+- Everything upgraded to latest on January 8th '22
 - Light/Dark [theme switch](https://medium.com/@haxzie/dark-and-light-theme-switcher-using-css-variables-and-pure-javascript-zocada-dd0059d72fa2)
 
 ## Eleventy plugins installed:
@@ -42,6 +36,10 @@ _Feel free to opt-out those not needed, or ignore them._
 - pagination
 - tags _(auto updated list)_
 - footer
+
+## CHANGELOG
+
+- Jan 8 '22: Added "npx yarn-upgrade-all" command to help bumping dependencies
 
 ### Say hi ;)
 
