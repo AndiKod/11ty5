@@ -15,4 +15,4 @@ Lorem Ipsum is dummy text of the printing and typesetting industry. Lorem Ipsum 
 
 ### H3 Title here
 
-raw styles will be added when I'll find time.
+...
