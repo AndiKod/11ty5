@@ -39,7 +39,7 @@ _Feel free to opt-out those not needed, or ignore them._
 
 ## CHANGELOG
 
-- Jan 8 '22: Added "npx yarn-upgrade-all" command to help bumping dependencies
+- Jan 8 '22: Added "npx yarn-upgrade-all" command to help bumping dependencies.
 
 ### Say hi ;)
 
